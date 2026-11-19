@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campanha de Lançamento — Cantina SENAI</title>
+
+  <!-- Fontes Oficiais do Guia: Playfair Display e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS e Animate.css via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vinho: {
+              DEFAULT: '#6B1220',
+              escuro: '#5C1A1B',
+              claro: '#8E1F2F',
+            },
+            creme: {
+              DEFAULT: '#FAF5E8',
+              claro: '#FDFBF7',
+            },
+            dourado: '#D9A441',
+            areia: '#E8D5C4',
+            vermelho: '#C0272D',
+            salvia: {
+              texto: '#4A7C59',
+              bg: '#E4F0E2',
+            },
+            tinta: '#1A1B1C',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            suave: '0 4px 14px rgba(91, 26, 27, 0.08)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-creme text-tinta font-sans antialiased">
+
+  <!-- 1. TOPO: Selo CS (versão sobre vinho), Slogan e Promessa -->
+  <header class="bg-vinho text-creme py-14 px-6 text-center border-b-2 border-dourado/40">
+    <div class="max-w-4xl mx-auto flex flex-col items-center">
+      
+      <!-- Logotipo Oficial CS em SVG (Selo Circular com 3 pontos dourados) -->
+      <svg class="w-24 h-24 mb-5 animate__animated animate__fadeIn" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo Cantina SENAI">
+        <circle cx="60" cy="60" r="56" fill="#6B1220" stroke="#D9A441" stroke-width="2.5"/>
+        <circle cx="48" cy="14" r="2.2" fill="#D9A441"/>
+        <circle cx="60" cy="13" r="2.2" fill="#D9A441"/>
+        <circle cx="72" cy="14" r="2.2" fill="#D9A441"/>
+        <circle cx="60" cy="60" r="36" fill="#FAF5E8"/>
+        <text x="60" y="69" text-anchor="middle" fill="#6B1220" font-family="Inter, sans-serif" font-weight="700" font-size="28" letter-spacing="1">CS</text>
+      </svg>
+
+      <span class="text-[11px] font-semibold uppercase tracking-[3px] text-dourado mb-2">
+        Cantina SENAI · Pratos &amp; Lanches
+      </span>
+
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-creme leading-tight mb-4 animate__animated animate__fadeInDown">
+        “Pediu, pagou, retirou.”
+      </h1>
+
+      <p class="text-base md:text-lg text-creme/90 max-w-2xl mx-auto font-normal leading-relaxed">
+        Do cardápio com fotos reais ao pedido que chega direto na cozinha — sem fila, sem papel e cuidando das suas restrições alimentares.
+      </p>
+
+      <!-- Botões em formato pill conforme Capítulo 06 -->
+      <div class="mt-8 flex justify-center gap-3 flex-wrap">
+        <a href="index.html" class="bg-creme text-vinho font-semibold text-sm px-7 py-3 rounded-full shadow-suave hover:bg-creme-claro transition">
+          Abrir Cardápio Digital
+        </a>
+        <a href="marca.html" class="border border-dourado text-creme font-medium text-sm px-7 py-3 rounded-full hover:bg-vinho-escuro transition">
+          Guia da Marca
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-14 space-y-16">
+
+    <!-- 2. POSTS E STORIES (Missão 4) -->
+    <section id="posts">
+      <div class="mb-8">
+        <span class="block text-[11px] font-semibold uppercase tracking-[2.5px] text-vinho-claro mb-1">
+          Missão 04 · Redes Sociais
+        </span>
+        <h2 class="font-serif text-3xl font-bold text-vinho">Posts e Stories para Instagram</h2>
+        <p class="text-sm text-tinta/75 mt-1">Peças visuais criadas seguindo a proporção 60/30/10 da marca e suas legendas.</p>
+      </div>
+
+      <div id="grid-posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- 3. BANNERS (Missão 5: TV animada + Cartaz PDF) -->
+    <section id="banners" class="bg-creme-claro p-6 md:p-8 rounded-2xl border border-areia shadow-suave">
+      <div class="mb-6">
+        <span class="block text-[11px] font-semibold uppercase tracking-[2.5px] text-vinho-claro mb-1">
+          Missão 05 · Sinalização &amp; Telas
+        </span>
+        <h2 class="font-serif text-3xl font-bold text-vinho">Banners da Campanha</h2>
+        <p class="text-sm text-tinta/75 mt-1">Simulação ao vivo do banner da TV da escola e cartaz oficial para impressão.</p>
+      </div>
+
+      <!-- Banner da TV funcionando dentro da página (troca a cada 3s) -->
+      <div class="bg-vinho text-creme rounded-xl p-8 md:p-14 text-center min-h-[250px] flex flex-col items-center justify-center relative overflow-hidden border border-dourado/50">
+        <span class="absolute top-4 left-5 text-[11px] font-semibold uppercase tracking-[2.5px] text-dourado">
+          Banner TV da Escola · Transição 3s
+        </span>
+        <p id="tv-slide-texto" class="font-serif text-2xl md:text-4xl font-bold max-w-3xl leading-snug animate__animated animate__fadeInUp">
+          Cansado de passar o intervalo inteiro na fila da cantina?
+        </p>
+        <div id="tv-indicadores" class="flex gap-2 mt-7"></div>
+      </div>
+
+      <!-- Link do Cartaz em PDF -->
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-creme border border-areia p-5 rounded-xl">
+        <div>
+          <span class="inline-block bg-salvia-bg text-salvia-texto text-xs font-semibold px-3 py-0.5 rounded-full mb-1.5">
+            Pronto para impressão A4
+          </span>
+          <h3 class="font-serif text-lg font-bold text-vinho">Cartaz Oficial com QR Code</h3>
+          <p class="text-sm text-tinta/75">Arquivo em PDF com título, 3 vantagens do app e acesso rápido ao cardápio.</p>
+        </div>
+        <a href="cartaz.pdf" target="_blank" class="bg-vinho text-creme font-semibold text-sm px-6 py-3 rounded-full hover:bg-vinho-escuro transition whitespace-nowrap">
+          Visualizar Cartaz (PDF)
+        </a>
+      </div>
+    </section>
+
+    <!-- 4. PLANO DE DIVULGAÇÃO E AÇÃO CRIATIVA (Missão 6) -->
+    <section id="plano">
+      <div class="mb-6">
+        <span class="block text-[11px] font-semibold uppercase tracking-[2.5px] text-vinho-claro mb-1">
+          Missão 06 · Lançamento
+        </span>
+        <h2 class="font-serif text-3xl font-bold text-vinho">Plano de Divulgação (10 Dias)</h2>
+        <p class="text-sm text-tinta/75 mt-1">Cronograma de ativação na escola e ação presencial no corredor da cantina.</p>
+      </div>
+
+      <!-- Card da Ação Criativa + Metas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="md:col-span-2 bg-creme-claro border border-areia p-6 rounded-2xl shadow-suave">
+          <span class="block text-[11px] font-semibold uppercase tracking-[2px] text-vinho-claro mb-1">
+            Ação Criativa Presencial
+          </span>
+          <h3 class="font-serif text-xl font-bold text-vinho mb-2">Via Expressa Cantina SENAI</h3>
+          <p class="text-sm text-tinta/85 leading-relaxed">
+            Demarcação no chão do corredor da cantina dividindo dois caminhos: a <em>“Fila tradicional”</em> e a <em>“Via Expressa CS”</em> com um totem de QR Code na entrada. Quem pedir pelo app retira direto no balcão identificado sem enfrentar espera.
+          </p>
+        </div>
+
+        <div class="bg-creme-claro border border-areia p-6 rounded-2xl shadow-suave flex flex-col justify-center">
+          <span class="block text-[11px] font-semibold uppercase tracking-[2px] text-vinho-claro mb-3">
+            Metas da Semana
+          </span>
+          <ul class="space-y-3 text-sm text-tinta">
+            <li class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-dourado shrink-0"></span>
+              <span><strong>100 leituras</strong> no QR Code da cantina</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-vinho shrink-0"></span>
+              <span><strong>60 pedidos</strong> realizados pelo Cardápio Digital</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tabela do Calendário de 10 dias -->
+      <div class="overflow-x-auto bg-creme-claro rounded-2xl border border-areia shadow-suave">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-vinho text-creme text-[11px] uppercase tracking-[2px]">
+              <th class="py-4 px-5 font-semibold">Dia</th>
+              <th class="py-4 px-5 font-semibold">Entrega / Ação</th>
+              <th class="py-4 px-5 font-semibold">Canal</th>
+              <th class="py-4 px-5 font-semibold">Responsável</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-calendario" class="divide-y divide-areia text-sm"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5. EQUIPE E CARGOS -->
+    <section id="equipe" class="bg-creme-claro p-6 md:p-8 rounded-2xl border border-areia shadow-suave">
+      <div class="mb-6">
+        <span class="block text-[11px] font-semibold uppercase tracking-[2.5px] text-vinho-claro mb-1">
+          Agência por um dia
+        </span>
+        <h2 class="font-serif text-3xl font-bold text-vinho">Equipe Cantina SENAI</h2>
+        <p class="text-sm text-tinta/75 mt-1">Integrantes e rotação de cargos durante o desenvolvimento da campanha.</p>
+      </div>
+
+      <div id="grid-equipe" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Institucional conforme Capítulo 06 (vinho escuro com texto creme) -->
+  <footer class="bg-vinho-escuro text-creme py-8 px-4 text-center border-t border-dourado/30">
+    <p class="font-serif text-base font-bold text-creme mb-1">Cantina SENAI · Pratos &amp; Lanches</p>
+    <p class="text-xs text-creme/75">Projeto Integrador DEV 2026 — Escola SENAI Morvan Figueiredo</p>
+  </footer>
+
+  <!-- Dados da campanha em JSON/JS -->
+  <script>
+    const dadosCampanha = {
+      posts: [
+        {
+          categoria: "POST 01 · O PROBLEMA",
+          titulo: "1080 × 1080 px",
+          imagem: "img/post1.png",
+          legenda: "Passar 15 minutos na fila para comer em dois ninguém merece. Chega de perder o intervalo esperando no balcão. Acesse o cardápio pelo link na bio e peça antes do sinal. #CantinaSENAI #IntervaloLivre #SENAIMorvan"
+        },
+        {
+          categoria: "POST 02 · A SOLUÇÃO",
+          titulo: "1080 × 1080 px",
+          imagem: "img/post2.png",
+          legenda: "Pediu, pagou, retirou. Escolha seu lanche com fotos reais, confira os ingredientes e retire direto no balcão sem filas. Teste agora pelo link na bio. #PediuPagouRetirou #CardapioDigital #CantinaSENAI"
+        },
+        {
+          categoria: "POST 03 · O RESULTADO",
+          titulo: "1080 × 1080 px",
+          imagem: "img/post3.png",
+          legenda: "De 15 minutos de espera para menos de 1 minuto na retirada. Mais tempo para descansar, conversar e aproveitar sua refeição com tranquilidade. Peça pelo link na bio. #MaisIntervalo #ZeroFila #SENAI2026"
+        },
+        {
+          categoria: "CARROSSEL · COMO USAR",
+          titulo: "3 imagens · 1080 × 1350 px",
+          imagem: "img/carrossel1.png",
+          legenda: "Arraste para o lado e veja como pedir seu lanche em três toques simples. Interface clara, rápida e com aviso preventivo de alérgenos. Acesse pelo link na bio. #ComoFunciona #SegurancaAlimentar #CantinaSENAI"
+        },
+        {
+          categoria: "STORY 01 · ENQUETE",
+          titulo: "1080 × 1920 px",
+          imagem: "img/story1.png",
+          legenda: "Bom dia! O que vai comer hoje no intervalo? Responda na caixinha qual lanche ou prato não pode faltar no nosso cardápio digital. Confira as opções no link. #EnqueteSENAI #HoraDoLanche #Cantina"
+        },
+        {
+          categoria: "STORY 02 · CONVITE",
+          titulo: "1080 × 1920 px",
+          imagem: "img/story2.png",
+          legenda: "Seu lanche pronto antes do sinal bater. Aponte a câmera para o QR Code ou toque no link para instalar o app da Cantina SENAI agora mesmo. #TesteAgora #QRCode #CantinaSENAI"
+        }
+      ],
+      slidesTV: [
+        "Cansado de passar o intervalo inteiro na fila da cantina?",
+        "Escolha seu lanche com fotos reais direto pelo celular antes do sinal bater.",
+        "Aviso claro de alérgenos e retirada expressa no balcão.",
+        "Pediu, pagou, retirou. Mais intervalo, zero fila.",
+        "Aponte a câmera para o cartaz no mural e faça seu pedido."
+      ],
+      calendario: [
+        { dia: "Dia 01", oQue: "Post 01 (O Problema) + Story 01 (Enquete)", onde: "Instagram", resp: "Isabelle Fernandes" },
+        { dia: "Dia 02", oQue: "Fixação do Cartaz A4 com QR Code", onde: "Mural e Cantina", resp: "Júlia Fernandes" },
+        { dia: "Dia 03", oQue: "Exibição do Banner Animado", onde: "TV da Escola", resp: "Sophia Paixão" },
+        { dia: "Dia 04", oQue: "Post 02 (A Solução) + Banner no Sistema", onde: "Instagram e App", resp: "Cícero Caetano" },
+        { dia: "Dia 05", oQue: "Ação Criativa (Via Expressa no corredor)", onde: "Corredor da Cantina", resp: "Toda a equipe" },
+        { dia: "Dia 06", oQue: "Carrossel (Como usar em 3 passos)", onde: "Instagram", resp: "Amira Jamal" },
+        { dia: "Dia 07", oQue: "Story 02 (Convite + QR Code)", onde: "Instagram / WhatsApp", resp: "Raissa Silva" },
+        { dia: "Dia 08", oQue: "Post 03 (O Resultado)", onde: "Instagram", resp: "Isabelle Fernandes" },
+        { dia: "Dia 09", oQue: "Divulgação nos grupos das turmas", onde: "WhatsApp / Salas", resp: "Júlia Fernandes" },
+        { dia: "Dia 10", oQue: "Balanço de leituras do QR Code e pedidos", onde: "Apresentação", resp: "Líder do grupo" }
+      ],
+      equipe: [
+        { nome: "Isabelle Fernandes", cargos: "Direção de Arte & Redação" },
+        { nome: "Júlia Fernandes", cargos: "Planejamento & Programação" },
+        { nome: "Sophia Paixão", cargos: "Redação & Direção de Arte" },
+        { nome: "Cícero Caetano", cargos: "Programação & Planejamento" },
+        { nome: "Amira Jamal", cargos: "Liderança & Revisão de Marca" },
+        { nome: "Raissa Silva", cargos: "Direção de Arte & Social Media" }
+      ]
+    };
+
+    // Renderizar Posts seguindo a estrutura visual do Card do Capítulo 06
+    const gridPosts = document.getElementById("grid-posts");
+    dadosCampanha.posts.forEach(post => {
+      gridPosts.innerHTML += `
+        <article class="bg-creme-claro rounded-2xl overflow-hidden border border-areia shadow-suave flex flex-col">
+          <div class="bg-creme aspect-square flex items-center justify-center overflow-hidden border-b border-areia">
+            <img src="${post.imagem}" alt="${post.categoria}" class="w-full h-full object-cover"
+                 onerror="this.parentElement.innerHTML='<div class=\\'p-6 text-center\\'><span class=\\'block text-[11px] font-semibold uppercase tracking-[2px] text-vinho-claro mb-1\\'>Arquivo Pendente</span><span class=\\'text-xs text-tinta/70\\'>Salve a imagem em <b>${post.imagem}</b></span></div>'">
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="block text-[11px] font-semibold uppercase tracking-[2.5px] text-vinho-claro mb-1">
+                ${post.categoria}
+              </span>
+              <h3 class="font-serif text-lg font-bold text-vinho mb-2">${post.titulo}</h3>
+              <p class="text-sm text-tinta/85 leading-relaxed">${post.legenda}</p>
+            </div>
+          </div>
+        </article>
+      `;
+    });
+
+    // Animação do Banner da TV (3 segundos por frase)
+    let slideAtual = 0;
+    const tvTexto = document.getElementById("tv-slide-texto");
+    const tvIndicadores = document.getElementById("tv-indicadores");
+
+    function atualizarIndicadores() {
+      tvIndicadores.innerHTML = dadosCampanha.slidesTV.map((_, i) =>
+        `<span class="h-2 rounded-full transition-all duration-300 ${i === slideAtual ? 'w-8 bg-dourado' : 'w-2 bg-creme/30'}"></span>`
+      ).join("");
+    }
+    atualizarIndicadores();
+
+    setInterval(() => {
+      slideAtual = (slideAtual + 1) % dadosCampanha.slidesTV.length;
+      tvTexto.classList.remove("animate__fadeInUp");
+      void tvTexto.offsetWidth;
+      tvTexto.textContent = dadosCampanha.slidesTV[slideAtual];
+      tvTexto.classList.add("animate__fadeInUp");
+      atualizarIndicadores();
+    }, 3000);
+
+    // Renderizar Calendário
+    const tabelaCal = document.getElementById("tabela-calendario");
+    dadosCampanha.calendario.forEach(item => {
+      tabelaCal.innerHTML += `
+        <tr class="hover:bg-creme/60 transition">
+          <td class="py-3.5 px-5 font-semibold text-vinho whitespace-nowrap">${item.dia}</td>
+          <td class="py-3.5 px-5 text-tinta">${item.oQue}</td>
+          <td class="py-3.5 px-5 text-tinta/75">${item.onde}</td>
+          <td class="py-3.5 px-5 text-tinta/75">${item.resp}</td>
+        </tr>
+      `;
+    });
+
+    // Renderizar Equipe
+    const gridEquipe = document.getElementById("grid-equipe");
+    dadosCampanha.equipe.forEach(membro => {
+      gridEquipe.innerHTML += `
+        <div class="bg-creme border border-areia p-4 rounded-xl">
+          <p class="font-serif text-base font-bold text-vinho">${membro.nome}</p>
+          <p class="text-xs font-medium text-vinho-claro mt-1">${membro.cargos}</p>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
