@@ -1,0 +1,164 @@
+/* =========================================================
+   IDENTIDADE VISUAL OFICIAL — CANTINA SENAI (VERSÃO 1.0)
+   ========================================================= */
+
+:root {
+  --vinho: #6B1220;
+  --creme: #FAF5E8;
+  --dourado: #D9A441;
+  --vinho-escuro: #5C1A1B;
+  --vinho-claro: #8E1F2F;
+  --creme-claro: #FDFBF7;
+  --areia: #E8D5C4;
+  --vermelho-vivo: #C0272D;
+  --salvia-texto: #4A7C59;
+  --salvia-bg: #E4F0E2;
+  --tinta: #1A1B1C;
+}
+
+body {
+  background-color: var(--creme);
+  color: var(--tinta);
+  font-family: 'Inter', sans-serif;
+}
+
+.font-serif { font-family: 'Playfair Display', serif; }
+.font-sans { font-family: 'Inter', sans-serif; }
+
+/* Cores de Fundo */
+.bg-vinho { background-color: var(--vinho); }
+.bg-vinho-escuro { background-color: var(--vinho-escuro); }
+.bg-creme { background-color: var(--creme); }
+.bg-creme-claro { background-color: var(--creme-claro); }
+.bg-dourado { background-color: var(--dourado); }
+
+/* Cores de Texto */
+.text-vinho { color: var(--vinho); }
+.text-vinho-claro { color: var(--vinho-claro); }
+.text-creme { color: var(--creme); }
+.text-creme-suave { color: rgba(250, 245, 232, 0.9); }
+.text-creme-rodape { color: rgba(250, 245, 232, 0.75); }
+.text-tinta { color: var(--tinta); }
+.text-tinta-corpo { color: rgba(26, 27, 28, 0.85); }
+.text-tinta-suave { color: rgba(26, 27, 28, 0.75); }
+
+/* Bordas e Sombras */
+.border-areia { border: 1px solid var(--areia); }
+.border-b-areia { border-bottom: 1px solid var(--areia); }
+.border-b-dourado { border-bottom: 2px solid rgba(217, 164, 65, 0.4); }
+.border-t-dourado { border-top: 1px solid rgba(217, 164, 65, 0.3); }
+
+.shadow-suave {
+  box-shadow: 0 4px 14px rgba(91, 26, 27, 0.08);
+}
+
+.card-superficie {
+  background-color: var(--creme-claro);
+  border: 1px solid var(--areia);
+  border-radius: 16px;
+}
+
+/* Eyebrows */
+.eyebrow-vinho {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--vinho-claro);
+  margin-bottom: 4px;
+}
+
+.eyebrow-dourado {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--dourado);
+}
+
+/* Botões Pill */
+.btn-primario-vinho {
+  display: inline-block;
+  background-color: var(--vinho);
+  color: var(--creme);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+.btn-primario-vinho:hover { background-color: var(--vinho-escuro); }
+
+.btn-primario-claro {
+  display: inline-block;
+  background-color: var(--creme);
+  color: var(--vinho);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+.btn-primario-claro:hover { background-color: var(--creme-claro); }
+
+.btn-outline-dourado {
+  display: inline-block;
+  border: 1px solid var(--dourado);
+  color: var(--creme);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+.btn-outline-dourado:hover { background-color: var(--vinho-escuro); }
+
+/* Badges */
+.badge-salvia {
+  display: inline-block;
+  background-color: var(--salvia-bg);
+  color: var(--salvia-texto);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* Banner da TV */
+.banner-tv {
+  background-color: var(--vinho);
+  border: 1px solid rgba(217, 164, 65, 0.5);
+  min-height: 250px;
+}
+
+.indicador-inativo {
+  background-color: rgba(250, 245, 232, 0.3);
+}
+
+/* Marcadores */
+.ponto-dourado {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: var(--dourado);
+  flex-shrink: 0;
+}
+
+.ponto-vinho {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: var(--vinho);
+  flex-shrink: 0;
+}
+
+/* Tabela */
+.divide-areia > tr + tr {
+  border-top: 1px solid var(--areia);
+}
+
+.linha-calendario:hover {
+  background-color: rgba(250, 245, 232, 0.7);
+}
